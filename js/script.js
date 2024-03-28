@@ -37,3 +37,32 @@ var kendaraanMasuk = function (platNomorKendaraan, slotParkir) {
     }
   }
 };
+
+var kendaraanKeluar = function (platNomorKendaraan, slotParkir) {
+  // jika slot parkiran kosong
+  if (slotParkir.length == 0) {
+    console.log("Seluruh parkiran telah kosong");
+    return slotParkir;
+  } else {
+    // telusuri keseluruhan slot parkir
+    for (var i = 0; i < slotParkir.length; i++) {
+      // jika ada kendaraan dengan plat nomor yang sesuai
+      if (platNomorKendaraan == slotParkir[i]) {
+        // keluarkan kendaraan tersebut dengan mengubah nilainya menjadi undefined
+        slotParkir[i] = undefined;
+        // kambalikan isi dari array dan keluar dari fungsi
+        return slotParkir;
+        //jika tidak ada kendaraan dengan plat nomor yang sesuai
+      } else if (i == slotParkir.length - 1) {
+        // tampilkan pesan "kendaraan tersebut tidak ada di parkiran"
+        console.log(
+          "Kendaraan dengan plat nomor : " +
+            platNomorKendaraan +
+            " dimaling orang tadi"
+        );
+        // kembalikan isi dari array dan keluar dari fungsi
+        return slotParkir;
+      }
+    }
+  }
+};
