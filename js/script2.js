@@ -5,10 +5,10 @@ function Parkiran(pengelola, slotParkir, kas) {
   this.kas = kas;
 
   this.kendaraanMasuk = function (platNomorKendaraan) {
-    if (thisslotParkir.length == 0) {
+    if (this.slotParkir.length == 0) {
       this.slotParkir.push(platNomorKendaraan);
       return this.slotParkir;
-    }else {
+    } else {
       // telusuri ketersediaan slot parkir
       for (var i = 0; i < slotParkir.length; i++) {
         // jika ada slot kosong
@@ -29,11 +29,12 @@ function Parkiran(pengelola, slotParkir, kas) {
           // kembalikan isi dari array dan keluar dari fungsi
           return this.slotParkir;
         }
-        // jika seluruh slot parkir terisi
-        this.slotParkir.push(platNomorKendaraan);
-        // kembalikan isi dari array dan keluar dari fungsi
-        return this.slotParkir;
       }
+      // jika seluruh slot parkir terisi
+      this.slotParkir.push(platNomorKendaraan);
+      // kembalikan isi dari array dan keluar dari fungsi
+      return this.slotParkir;
+    }
   };
 
   this.kendaraaanKeluar = function (platNomorKendaraan, tarif) {
