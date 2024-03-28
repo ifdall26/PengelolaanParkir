@@ -19,7 +19,7 @@ function Parkiran(pengelola, slotParkir, kas) {
       if (this.slotParkir[i] == platNomorKendaraan) {
         this.slotParkir[i] = undefined;
         this.kas += tarif;
-        return slotParkir;
+        return this.slotParkir;
       }
     }
   };
